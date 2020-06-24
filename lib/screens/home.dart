@@ -1,6 +1,5 @@
 import 'package:customer_list/bloc/bloc.dart';
 import 'package:customer_list/model/model.dart';
-import 'package:customer_list/screens/mutiadd.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial_material_design/flutter_speed_dial_material_design.dart';
@@ -41,7 +40,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: _buildFloatingActionButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
@@ -71,8 +69,7 @@ class _HomePageState extends State<HomePage> {
   _onSpeedDialAction(int selectedActionIndex) {
     print('$selectedActionIndex Selected');
     if (selectedActionIndex == 0) {
-      //_showCreateDialog();
-      Navigator.push(context, CupertinoPageRoute(builder: (context) => MutiAddPage()));
+      _showCreateDialog();
     } else if (selectedActionIndex == 1) {
       bloc.deleteDoneCustomer();
     }
