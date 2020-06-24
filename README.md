@@ -1,6 +1,6 @@
 # customer_list
 
-A new Flutter application.
+Customer의 이름과 지불할 가격을 이용해 list를 생성하여 등록하는 app
 
 ## Getting Started
 
