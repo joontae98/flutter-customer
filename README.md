@@ -1,6 +1,6 @@
-# customer_list
+# Customer_list
 
-Customer의 이름과 지불할 가격을 이용해 list를 생성하여 등록하는 app
+Customer의 이름과 지불할 가격을 등록해 list를 생성하여 Customer가 금액을 지불하였는지 확인하는 app
 
 ## Getting Started
 
