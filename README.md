@@ -2,15 +2,7 @@
 
 Customer의 이름과 지불할 가격을 등록해 list를 생성하여 Customer가 금액을 지불하였는지 확인하는 app
 
-## Getting Started
+## Example
 
-This project is a starting point for a Flutter application.
+<img src="https://user-images.githubusercontent.com/65265805/85828466-73f28200-b7c3-11ea-8a8e-04072785e6ea.gif" height="400" width="250">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
