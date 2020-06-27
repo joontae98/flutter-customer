@@ -39,11 +39,7 @@ class DB{
     final db = await database;
     await db.insert(kTableCustomers, customer.toMapAutoID());
   }
-  deleteCustomer(int id) async {
-    final db = await database;
-    await db.delete(kTableCustomers, where: 'id=?', whereArgs: [id]);
-  }
-  deleteAllCustomers({bool status = true}) async {
+  deleteDoneCustomers({bool status = true}) async {
     final db = await database;
     await db.delete(kTableCustomers, where: 'status=?', whereArgs: [status]);
   }

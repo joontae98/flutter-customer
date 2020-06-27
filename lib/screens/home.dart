@@ -134,120 +134,19 @@ class _HomePageState extends State<HomePage> {
                 //dog의 인자를 전달하여 저장
                 Customer item = snapshot.data[index];
 
-                return Dismissible(
-                  key: UniqueKey(),
-                  child: ListTile(
-                    onTap: (){},
-                    contentPadding: EdgeInsets.only(left:30.0,right: 20.0),
-                    trailing: Checkbox(
-                      value: item.status,
-                      onChanged: (bool value){
-                        bloc.statusCustomer(item);
-                      },
-                    ),
-                    title: Text(item.name,style:
-                    item.status ? TextStyle(fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough,fontSize: 20.0,color: Colors.grey) :
-                    TextStyle(fontStyle: FontStyle.italic,fontSize: 20.0,color: Colors.teal)),
-                    subtitle: Text(item.price,style: TextStyle(fontFamily: 'Raleway',fontSize: 15.0,color: item.status ? Colors.grey : Colors.teal)),
+                return ListTile(
+                  onTap: (){},
+                  contentPadding: EdgeInsets.only(left:30.0,right: 20.0),
+                  trailing: Checkbox(
+                    value: item.status,
+                    onChanged: (bool value){
+                      bloc.statusCustomer(item);
+                    },
                   ),
-                  background: Container(
-                    color: Colors.red,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Icon(Icons.delete,color: Colors.white,),
-                          Text(
-                            'Delete',
-                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  secondaryBackground: Container(
-                    color: Colors.red,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Icon(Icons.delete,color: Colors.white,),
-                          Text(
-                            'Delete',
-                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  // ignore: missing_return
-                  confirmDismiss: (direction) async {
-                    if (direction == DismissDirection.endToStart) {
-                      final bool res = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              content: Text("Are you sure you want to delete?"),
-                              actions: <Widget>[
-                                FlatButton(
-                                  child: Text(
-                                    "Cancel",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                FlatButton(
-                                  child: Text(
-                                    "Delete",
-                                    style: TextStyle(color: Colors.red),
-                                  ),
-                                  onPressed: () {
-                                    bloc.deleteCustomer(item.id);
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            );
-                          });
-                      return res;
-                    }else if (direction == DismissDirection.startToEnd) {
-                      final bool res = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              content: Text("Are you sure you want to delete?"),
-                              actions: <Widget>[
-                                FlatButton(
-                                  child: Text(
-                                    "Cancel",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                FlatButton(
-                                  child: Text(
-                                    "Delete",
-                                    style: TextStyle(color: Colors.red),
-                                  ),
-                                  onPressed: () {
-                                    bloc.deleteCustomer(item.id);
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            );
-                          });
-                      return res;
-                    }
-                  },
+                  title: Text(item.name,style:
+                  item.status ? TextStyle(fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough,fontSize: 20.0,color: Colors.grey) :
+                  TextStyle(fontStyle: FontStyle.italic,fontSize: 20.0,color: Colors.teal)),
+                  subtitle: Text(item.price,style: TextStyle(fontFamily: 'Raleway',fontSize: 15.0,color: item.status ? Colors.grey : Colors.teal)),
                 );
               });
         }

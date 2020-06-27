@@ -15,7 +15,7 @@ class CustomerBloc{
   }
 
   deleteDoneCustomer() async{
-    await DB().deleteAllCustomers();
+    await DB().deleteDoneCustomers();
     _customerController.sink.add(await DB().getAllCustomers());
   }
   getCustomers() async{
@@ -24,11 +24,6 @@ class CustomerBloc{
 
   addCustomer(Customer customer) async{
     await DB().createCustomer(customer);
-    getCustomers();
-  }
-
-  deleteCustomer(int id) async{
-    await DB().deleteCustomer(id);
     getCustomers();
   }
 
