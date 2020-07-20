@@ -3,9 +3,12 @@
 Customer의 이름과 지불할 가격을 등록해 list를 생성하여 Customer가 금액을 지불하였는지 확인하는 app
 
 ## Tech used
-
+#### Built with
+* io
+* async
+* material
+* cupertino
 #### Package
-
 * sqflite
 * path_provider
 * flutter_speed_dial_material_design
