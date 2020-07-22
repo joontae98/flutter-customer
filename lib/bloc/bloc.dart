@@ -8,11 +8,8 @@ class CustomerBloc{
     getCustomers();
   }
   final _customerController = StreamController<List<Customer>>.broadcast();
-  get customers =>_customerController.stream;
 
-  dispose(){
-    _customerController.close();
-  }
+  get customers =>_customerController.stream;
 
   deleteDoneCustomer() async{
     await DB().deleteDoneCustomers();
@@ -32,5 +29,8 @@ class CustomerBloc{
     getCustomers();
   }
 
+  dispose(){
+    _customerController.close();
+  }
 }
 
