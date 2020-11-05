@@ -1,7 +1,7 @@
 # Customer_list
 
 **Customer**의 이름과 지불할 가격을 등록해 **list**를 생성하여 **Customer**가 금액을 지불하였는지 확인하는 **App**
-.
+
 ## How to use?
 
 1. **+** 버튼의 **Add** **Customer**를 이용하여 **Customer**의 정보를 등록
